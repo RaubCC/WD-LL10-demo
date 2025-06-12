@@ -49,3 +49,25 @@ function filterList(searchTerm, searchUsers) {}
 /* Level Up - Task 9 - Compelte the task according to the TODO */
 
 /* Level Up - Task 10 - Add to the `addComment` function so that the an `@` sign is added to the username if there is not already one before it gets pushed into the array.  */
+
+/* Additional Functions */
+// This function adds an animation class to the winning comment in the list
+function animateWinningComment(winnerComment) {
+  // Find all comment elements in the list (assuming they have a class 'list-group-item')
+  const commentElements = document.querySelectorAll(".list-group-item");
+  // Loop through each comment element
+  commentElements.forEach((el) => {
+    // Check if the text matches the winner's comment
+    if (el.textContent === winnerComment) {
+      // Add the 'winner' and animation classes
+      el.classList.add("winner", "animate__animated", "animate__tada");
+      // Remove the animation class after it finishes (1s)
+      setTimeout(() => {
+        el.classList.remove("animate__animated", "animate__tada");
+      }, 1000);
+    } else {
+      // Remove winner class from non-winners
+      el.classList.remove("winner");
+    }
+  });
+}
