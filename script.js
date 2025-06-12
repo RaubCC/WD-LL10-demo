@@ -17,7 +17,12 @@ function showRandomEmoji() {
 }
 
 /* Task 5 - Complete the function according to the TODO */
-function reverseOrder() {}
+function reverseOrder() {
+  // Reverse the order of the comments array
+  comments.reverse();
+  // If you have a function to update the displayed list, call it here (example: renderComments())
+  // renderComments();
+}
 
 /* Task 6 - Complete the function according to the TODO */
 function removeComment(index) {}
