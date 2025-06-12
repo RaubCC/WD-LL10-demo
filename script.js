@@ -6,7 +6,15 @@ function addComment(username, comment, addToStart) {}
 /* Task 3 - Create your pickWinner below according to the TODO */
 
 /* Task 4 - Complete the function according to the TODO */
-function showRandomEmoji() {}
+function showRandomEmoji() {
+  // Get the #winner-emoji element from the page
+  const emojiElement = document.getElementById("winner-emoji");
+  // Pick a random emoji from the emojis array (from data.js)
+  const randomIndex = Math.floor(Math.random() * emojis.length);
+  const randomEmoji = emojis[randomIndex];
+  // Display the emoji in the #winner-emoji element
+  emojiElement.textContent = randomEmoji;
+}
 
 /* Task 5 - Complete the function according to the TODO */
 function reverseOrder() {}
