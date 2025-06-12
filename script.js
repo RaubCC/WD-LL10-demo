@@ -1,5 +1,18 @@
 /* Task 1 - Complete the function according to the TODO */
-function addComment(username, comment, addToStart) {}
+function addComment(username, comment, addToStart) {
+  // If the username does not start with '@', add it
+  if (!username.startsWith("@")) {
+    username = `@${username}`;
+  }
+  // Create the comment string in the format: @username: comment
+  const newComment = `${username}: ${comment}`;
+  // Add the comment to the start or end of the comments array
+  if (addToStart) {
+    comments.unshift(newComment); // Adds to the beginning
+  } else {
+    comments.push(newComment); // Adds to the end
+  }
+}
 
 /* Task 2 - Create your showWinnerMessage below according to the TODO */
 
