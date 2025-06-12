@@ -4,6 +4,17 @@ function addComment(username, comment, addToStart) {}
 /* Task 2 - Create your showWinnerMessage below according to the TODO */
 
 /* Task 3 - Create your pickWinner below according to the TODO */
+function pickWinner() {
+  // Pick a random index from the comments array
+  const randomIndex = Math.floor(Math.random() * comments.length);
+  // Get the winner's comment
+  const winnerComment = comments[randomIndex];
+  // Display the winner's comment in the #winner-display element
+  const winnerDisplay = document.getElementById("winner-display");
+  winnerDisplay.textContent = winnerComment;
+  // Show a random celebratory emoji
+  showRandomEmoji();
+}
 
 /* Task 4 - Complete the function according to the TODO */
 function showRandomEmoji() {
