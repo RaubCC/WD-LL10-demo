@@ -14,6 +14,8 @@ function pickWinner() {
   winnerDisplay.textContent = winnerComment;
   // Show a random celebratory emoji
   showRandomEmoji();
+  // Animate the winning comment in the list
+  animateWinningComment(winnerComment);
 }
 
 /* Task 4 - Complete the function according to the TODO */
