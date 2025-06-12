@@ -12,6 +12,24 @@ function addComment(username, comment, addToStart) {
   } else {
     comments.push(newComment); // Adds to the end
   }
+  // After adding, scroll to the new comment in the list
+  setTimeout(() => {
+    // Find all comment elements in the list
+    const commentElements = document.querySelectorAll(".list-group-item");
+    if (addToStart && commentElements.length > 0) {
+      // Scroll to the first comment if added to start
+      commentElements[0].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    } else if (!addToStart && commentElements.length > 0) {
+      // Scroll to the last comment if added to end
+      commentElements[commentElements.length - 1].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, 100); // Wait for DOM update
 }
 
 /* Task 2 - Create your showWinnerMessage below according to the TODO */
